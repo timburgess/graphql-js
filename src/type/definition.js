@@ -85,8 +85,8 @@ export function assertType(type: mixed): GraphQLType {
  * There are predicates for each kind of GraphQL type.
  */
 
-declare function isScalarType(type: mixed): boolean %checks(type instanceof
-  GraphQLScalarType);
+// declare function isScalarType(type: mixed): boolean %checks(type instanceof
+//   GraphQLScalarType);
 // eslint-disable-next-line no-redeclare
 export function isScalarType(type) {
   return instanceOf(type, GraphQLScalarType);
@@ -99,8 +99,8 @@ export function assertScalarType(type: mixed): GraphQLScalarType {
   return type;
 }
 
-declare function isObjectType(type: mixed): boolean %checks(type instanceof
-  GraphQLObjectType);
+// declare function isObjectType(type: mixed): boolean %checks(type instanceof
+//   GraphQLObjectType);
 // eslint-disable-next-line no-redeclare
 export function isObjectType(type) {
   return instanceOf(type, GraphQLObjectType);
@@ -113,8 +113,8 @@ export function assertObjectType(type: mixed): GraphQLObjectType {
   return type;
 }
 
-declare function isInterfaceType(type: mixed): boolean %checks(type instanceof
-  GraphQLInterfaceType);
+// declare function isInterfaceType(type: mixed): boolean %checks(type instanceof
+//   GraphQLInterfaceType);
 // eslint-disable-next-line no-redeclare
 export function isInterfaceType(type) {
   return instanceOf(type, GraphQLInterfaceType);
@@ -129,8 +129,8 @@ export function assertInterfaceType(type: mixed): GraphQLInterfaceType {
   return type;
 }
 
-declare function isUnionType(type: mixed): boolean %checks(type instanceof
-  GraphQLUnionType);
+// declare function isUnionType(type: mixed): boolean %checks(type instanceof
+//   GraphQLUnionType);
 // eslint-disable-next-line no-redeclare
 export function isUnionType(type) {
   return instanceOf(type, GraphQLUnionType);
@@ -143,8 +143,8 @@ export function assertUnionType(type: mixed): GraphQLUnionType {
   return type;
 }
 
-declare function isEnumType(type: mixed): boolean %checks(type instanceof
-  GraphQLEnumType);
+// declare function isEnumType(type: mixed): boolean %checks(type instanceof
+//   GraphQLEnumType);
 // eslint-disable-next-line no-redeclare
 export function isEnumType(type) {
   return instanceOf(type, GraphQLEnumType);
@@ -157,8 +157,8 @@ export function assertEnumType(type: mixed): GraphQLEnumType {
   return type;
 }
 
-declare function isInputObjectType(type: mixed): boolean %checks(type instanceof
-  GraphQLInputObjectType);
+// declare function isInputObjectType(type: mixed): boolean %checks(type instanceof
+//   GraphQLInputObjectType);
 // eslint-disable-next-line no-redeclare
 export function isInputObjectType(type) {
   return instanceOf(type, GraphQLInputObjectType);
@@ -173,8 +173,8 @@ export function assertInputObjectType(type: mixed): GraphQLInputObjectType {
   return type;
 }
 
-declare function isListType(type: mixed): boolean %checks(type instanceof
-  GraphQLList);
+// declare function isListType(type: mixed): boolean %checks(type instanceof
+//   GraphQLList);
 // eslint-disable-next-line no-redeclare
 export function isListType(type) {
   return instanceOf(type, GraphQLList);
@@ -187,8 +187,8 @@ export function assertListType(type: mixed): GraphQLList<any> {
   return type;
 }
 
-declare function isNonNullType(type: mixed): boolean %checks(type instanceof
-  GraphQLNonNull);
+// declare function isNonNullType(type: mixed): boolean %checks(type instanceof
+//   GraphQLNonNull);
 // eslint-disable-next-line no-redeclare
 export function isNonNullType(type) {
   return instanceOf(type, GraphQLNonNull);
@@ -340,12 +340,12 @@ export function assertAbstractType(type: mixed): GraphQLAbstractType {
  *     })
  *
  */
-declare class GraphQLList<+T: GraphQLType> {
-  +ofType: T;
-  static <T>(ofType: T): GraphQLList<T>;
-  // Note: constructors cannot be used for covariant types. Drop the "new".
-  constructor(ofType: GraphQLType): void;
-}
+// declare class GraphQLList<+T: GraphQLType> {
+//   +ofType: T;
+//   static <T>(ofType: T): GraphQLList<T>;
+//   // Note: constructors cannot be used for covariant types. Drop the "new".
+//   constructor(ofType: GraphQLType): void;
+// }
 // eslint-disable-next-line no-redeclare
 export function GraphQLList(ofType) {
   if (this instanceof GraphQLList) {
@@ -384,12 +384,12 @@ defineToJSON(GraphQLList);
  *
  * Note: the enforcement of non-nullability occurs within the executor.
  */
-declare class GraphQLNonNull<+T: GraphQLNullableType> {
-  +ofType: T;
-  static <T>(ofType: T): GraphQLNonNull<T>;
-  // Note: constructors cannot be used for covariant types. Drop the "new".
-  constructor(ofType: GraphQLType): void;
-}
+// declare class GraphQLNonNull<+T: GraphQLNullableType> {
+//   +ofType: T;
+//   static <T>(ofType: T): GraphQLNonNull<T>;
+//   // Note: constructors cannot be used for covariant types. Drop the "new".
+//   constructor(ofType: GraphQLType): void;
+// }
 // eslint-disable-next-line no-redeclare
 export function GraphQLNonNull(ofType) {
   if (this instanceof GraphQLNonNull) {
@@ -449,9 +449,9 @@ export function assertNullableType(type: mixed): GraphQLNullableType {
 }
 
 /* eslint-disable no-redeclare */
-declare function getNullableType(type: void | null): void;
-declare function getNullableType<T: GraphQLNullableType>(type: T): T;
-declare function getNullableType<T>(type: GraphQLNonNull<T>): T;
+// declare function getNullableType(type: void | null): void;
+// declare function getNullableType<T: GraphQLNullableType>(type: T): T;
+// declare function getNullableType<T>(type: GraphQLNonNull<T>): T;
 export function getNullableType(type) {
   /* eslint-enable no-redeclare */
   if (type) {
@@ -489,8 +489,8 @@ export function assertNamedType(type: mixed): GraphQLNamedType {
 }
 
 /* eslint-disable no-redeclare */
-declare function getNamedType(type: void | null): void;
-declare function getNamedType(type: GraphQLType): GraphQLNamedType;
+// declare function getNamedType(type: void | null): void;
+// declare function getNamedType(type: GraphQLType): GraphQLNamedType;
 export function getNamedType(type) {
   /* eslint-enable no-redeclare */
   if (type) {
