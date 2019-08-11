@@ -1,3 +1,4 @@
+// @ts-ignore
 import { ObjMap } from './ObjMap.ts';
 
 /**
